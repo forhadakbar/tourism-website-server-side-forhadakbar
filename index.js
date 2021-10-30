@@ -14,7 +14,7 @@ app.use(express.json())
 
 // Test root
 app.get('/', (req, res) => {
-    res.send('Hello from WeTourTravel')
+    res.send('Running WeTourTravel server side')
 });
 
 
@@ -48,7 +48,7 @@ async function run() {
         app.get('/services/:id', async (req, res) => {
 
             const id = req.params.id;
-            console.log('gettin id', id);
+            console.log('getting id', id);
 
             const query = { _id: ObjectId(id) }
 
