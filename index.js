@@ -59,6 +59,14 @@ async function run() {
 
         })
 
+        //POST API TO ADD A NEW SERVICEs
+        app.post('/services', (req, res) => {
+            const newService = req.body;
+            servicesCollection.insertOne(newService).then((result) => {
+                res.send(result.insertedCount > 0);
+            });
+        });
+
         //POST API
 
         app.post('/bookingitems', (req, res) => {
